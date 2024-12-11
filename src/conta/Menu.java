@@ -1,19 +1,22 @@
 package conta;
 
 import java.util.Scanner;
-
 import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 	public static void main(String[] args) {
 		// Instanciamento / Classe -> Objeto Utilizavel
-		Conta c1 = new Conta(123456,0001, 1,"Maria das Neves",500f);
-        c1.setSaldo(5000f);
-        
-        System.out.println("Titular:" + c1.getTitular());
-        System.out.println("Saldo:" + c1.getSaldo());
-        
+		Conta c1 = new Conta(123456, 0001, 1, "Maria das Neves", 1000f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+
+		System.out.println("Titular:" + c1.getTitular());
+		System.out.println("Saldo:" + c1.getSaldo());
+
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
@@ -21,7 +24,7 @@ public class Menu {
 		while (true) {
 
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
-					         + "*****************************************************************");
+					+ "*****************************************************************");
 			System.out.println("                                                                 ");
 			System.out.println("                           Banco Gen                             ");
 			System.out.println("                                                                 ");
